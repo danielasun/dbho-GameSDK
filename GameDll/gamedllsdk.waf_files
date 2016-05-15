@@ -118,6 +118,12 @@
       ]
 		},
 		"CryGameSDKDLL_uber_1.cpp":{
+      "MyEntities":[
+         "MyEntities/MyObject.h",
+         "MyEntities/MyObject.cpp",
+         "MyEntities/MyHuman.h",
+         "MyEntities/MyHuman.cpp"
+      ],
       "Actor Files":[
          "Actor.cpp",
          "ActorDamageEffectController.cpp",
@@ -403,6 +409,12 @@
          "EntityUtility/EntityEffectsCloak.h",
          "EntityUtility/EntityEffectsHeat.h",
          "EntityUtility/EntityScriptCalls.h"
+      ],
+      "Entities":[
+         "Entities/Orange.cpp",
+         "Entities/Medic.cpp",
+         "Entities/Orange.h",
+         "Entities/Medic.h"
       ]
 		},
 		"CryGameSDKDLL_uber_7.cpp":{

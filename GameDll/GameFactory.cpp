@@ -51,6 +51,9 @@
 #include "UseableTurret.h"
 #include "CinematicWeapon.h"
 
+#include "Entities/Medic.h"
+#include "Entities/Orange.h"
+
 #include "DummyPlayer.h"
 
 #include "ReplayObject.h"
@@ -132,6 +135,10 @@
 #include "Environment/WaterRipplesGenerator.h"
 #include "Environment/LightningArc.h"
 
+#include "MyEntities/MyObject.h"
+
+#include "MyEntities/MyHuman.h"
+
 #include "AI/AICorpse.h"
 
 #include "Turret/Turret/Turret.h"
@@ -145,7 +152,6 @@
 #include <IGameVolumes.h>
 
 #include "GameCVars.h"
-
 
 #define HIDE_FROM_EDITOR(className)																																				\
   { IEntityClass *pItemClass = gEnv->pEntitySystem->GetClassRegistry()->FindClass(className);\
@@ -239,8 +245,8 @@ void InitGameFactory(IGameFramework *pFramework)
 
 	// Characters
 	REGISTER_FACTORY(pFramework, "Characters/Human", CPlayer, true);
-	REGISTER_FACTORY(pFramework, "Characters/Zombie", CPlayer, true); // DBHO
-
+	REGISTER_FACTORY(pFramework, "Characters/Medic", CMedic, true);
+	REGISTER_FACTORY(pFramework, "Characters/MyHuman", CMyHuman, true);
 
 	// Items
 	REGISTER_FACTORY(pFramework, "Item", CItem, false);
@@ -333,6 +339,9 @@ void InitGameFactory(IGameFramework *pFramework)
 	HIDE_FROM_EDITOR("ReplayActor");
 	HIDE_FROM_EDITOR("AICorpse");
 	HIDE_FROM_EDITOR("NullAI");
+	REGISTER_GAME_OBJECT(pFramework, Orange, "Scripts/Entities/Food/Orange.lua");
+	REGISTER_GAME_OBJECT(pFramework, MyObject, "Scripts/Entities/Custom/MyObject.lua");
+
 
 	//////////////////////////////////////////////////////////////////////////
 	/// Shape/Volume objects
